@@ -10,7 +10,6 @@ let isZero = false
 document.querySelectorAll(".numberBtn").forEach((numberBtn)=>{
     numberBtn.addEventListener("click",(e)=>{
         addToCurrNum(e.target.value)
-
     })
 })
 
@@ -24,7 +23,6 @@ document.querySelector("#allClear").addEventListener("click",clearAll)
 // Add KeyboardListener
 document.addEventListener(
     "keydown",(e)=>{
-        
         if(allNums.includes(e.key)) addToCurrNum(e.key)
         else if(e.key =="Backspace" || e.key=="Delete") delCurrNum()
         else if (allOperands.includes(e.key)) operate(e.key)
@@ -72,7 +70,6 @@ function storeNum(){
     storedNumber = inputNum
     console.log(storedNumber)
     clearCurr()
-    
 }
 
 //Clear CurrNum
@@ -110,8 +107,8 @@ function operate(input){
     storeNum()
     operand = input
     history.textContent = storedNumber + operand 
-
 }
+
 // Equal
 function equal(){
     
@@ -155,5 +152,5 @@ function evaluate(){
     if (size>=14) {result= "OVERFLOW"}
     else if (result.length>=14) result= result.slice(0,14)
     return result
-    
+
 }
